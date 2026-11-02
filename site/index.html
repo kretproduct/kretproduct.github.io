@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kretproduct</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Продюсирование экспертов: стратегия, упаковка и воронка продаж с понятным результатом на руках. От 50 000 ₽. ИП Кретушев Д. А.">
+<meta name="description" content="Продюсирование экспертов: стратегия, упаковка и воронка продаж с понятным результатом на руках. От 40 000 ₽. ИП Кретушев Д. А.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: студия-подрядчик — оффер с карточкой цены, состав результата в виде папки с файлами, тарифы, этапы по неделям, оплата, вопросы, реквизиты */
+/* Layout: студия-подрядчик — оффер с карточкой цены, состав результата в виде папки с файлами, одна услуга, этапы по неделям, оплата, вопросы, реквизиты */
 :root {
   --bg: #F3F4F6;
   --surface: #FFFFFF;
@@ -102,7 +102,7 @@ h3 { margin: 0; text-wrap: balance; }
 .folder .fh { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); font: 500 13px/1 var(--font-mono); color: var(--muted); }
 .folder .fh::before { content: ""; width: 16px; height: 12px; border-radius: 2px 2px 3px 3px; background: var(--accent); }
 .folder ul { margin: 0; padding: 6px 0; list-style: none; }
-.folder li { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 16px; }
+.folder li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; align-items: center; padding: 9px 16px; }
 .folder li + li { border-top: 1px dashed var(--line); }
 .ext { font: 500 10px/1 var(--font-mono); text-transform: uppercase; color: var(--accent-ink); background: var(--accent); border-radius: 4px; padding: 4px 0; text-align: center; }
 .folder .fn { font: 500 14px/1.35 var(--font-mono); overflow-wrap: anywhere; }
@@ -116,6 +116,7 @@ h3 { margin: 0; text-wrap: balance; }
 .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
 .plan { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; display: grid; grid-template-rows: auto auto auto auto 1fr auto; gap: 12px; }
 .plan.main { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+#plans .plan { max-width: 560px; grid-template-rows: none; }
 .plan .tag { font: 500 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
 .plan .tag b { color: var(--accent-ink); background: var(--accent); border-radius: 4px; padding: 3px 6px; font-weight: 500; }
 .plan h3 { font: 600 21px/1.25 var(--font-body); }
@@ -177,7 +178,7 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
   <div class="wrap">
     <a class="logo" href="#"><i>▶</i>Kretproduct</a>
     <nav>
-      <a href="#result">Результат</a><a href="#plans">Тарифы</a><a href="#pay">Оплата</a><a href="#faq">Вопросы</a>
+      <a href="#result">Результат</a><a href="#plans">Что входит</a><a href="#pay">Оплата</a><a href="#faq">Вопросы</a>
       <a class="btn" data-seller-href="tg" href="#" target="_blank" rel="noopener">Написать</a>
     </nav>
   </div>
@@ -190,7 +191,7 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
       <h1>Упакуем вашу экспертизу <em>в продукт и воронку продаж</em></h1>
       <p class="lead">Разрабатываем позиционирование, линейку продуктов, тексты и воронку продаж для экспертов и специалистов. Работаем по этапам, каждый этап заканчивается готовыми материалами, которые остаются у вас.</p>
       <div class="acts">
-        <a class="btn" href="#plans">Смотреть тарифы</a>
+        <a class="btn" href="#plans">Что входит</a>
         <a class="btn ghost" data-seller-href="tg" href="#" target="_blank" rel="noopener">Обсудить проект</a>
       </div>
       <ul class="who" aria-label="С кем работаем">
@@ -199,7 +200,7 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
     </div>
     <aside class="card" aria-label="Стоимость">
       <span class="eyebrow">Стоимость</span>
-      <div class="price"><small>от</small>50 000 ₽</div>
+      <div class="price"><small>от</small>40 000 ₽</div>
       <dl>
         <div><dt>Срок</dt><dd>от 2 недель</dd></div>
         <div><dt>Формат</dt><dd>онлайн, созвоны и Telegram</dd></div>
@@ -223,13 +224,12 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
       <div class="folder" aria-label="Пример состава материалов">
         <div class="fh">Проект_эксперта</div>
         <ul>
-          <li><span class="ext">pdf</span><span class="fn">Позиционирование.pdf</span><span class="tier">Стратегия</span></li>
-          <li><span class="ext">pdf</span><span class="fn">Анализ_конкурентов.pdf</span><span class="tier">Стратегия</span></li>
-          <li><span class="ext">xlsx</span><span class="fn">Линейка_продуктов_и_цены.xlsx</span><span class="tier">Стратегия</span></li>
-          <li><span class="ext">doc</span><span class="fn">Тексты_для_сайта_и_профиля.docx</span><span class="tier">Упаковка</span></li>
-          <li><span class="ext">xlsx</span><span class="fn">Контент-план_30_дней.xlsx</span><span class="tier">Упаковка</span></li>
-          <li><span class="ext">doc</span><span class="fn">Сценарий_воронки_продаж.docx</span><span class="tier">Упаковка</span></li>
-          <li><span class="ext">pdf</span><span class="fn">Еженедельные_отчёты.pdf</span><span class="tier">Сопровождение</span></li>
+          <li><span class="ext">pdf</span><span class="fn">Позиционирование.pdf</span></li>
+          <li><span class="ext">pdf</span><span class="fn">Анализ_конкурентов.pdf</span></li>
+          <li><span class="ext">xlsx</span><span class="fn">Линейка_продуктов_и_цены.xlsx</span></li>
+          <li><span class="ext">doc</span><span class="fn">Тексты_для_сайта_и_профиля.docx</span></li>
+          <li><span class="ext">xlsx</span><span class="fn">Контент-план_30_дней.xlsx</span></li>
+          <li><span class="ext">doc</span><span class="fn">Сценарий_воронки_продаж.docx</span></li>
         </ul>
       </div>
       <ul class="points">
@@ -245,55 +245,25 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
 <section class="band" id="plans">
   <div class="wrap">
     <div class="sh">
-      <span class="eyebrow">Тарифы</span>
-      <h2>Выберите объём работ</h2>
-      <p>Цены фиксированные и указаны в рублях. Если нужен другой состав работ, рассчитаем отдельно до оплаты.</p>
+      <span class="eyebrow">Услуга</span>
+      <h2>Что входит</h2>
+      <p>Итоговая стоимость зависит от объёма работ. Сумму и сроки фиксируем в переписке до оплаты, после этого они не меняются.</p>
     </div>
-    <div class="plans">
-      <article class="plan">
-        <span class="tag">Тариф 1</span>
-        <h3>Стратегия</h3>
-        <div class="price">50 000 ₽</div>
-        <span class="meta">Срок — 2 недели</span>
-        <ul>
-          <li>Созвон-интервью о вашем опыте и клиентах</li>
-          <li>Анализ ниши и 5 конкурентов</li>
-          <li>Документ с позиционированием</li>
-          <li>Линейка продуктов с ценами</li>
-          <li>План запуска продаж по шагам</li>
-        </ul>
-        <a class="btn ghost" data-seller-href="tg" href="#" target="_blank" rel="noopener">Заказать</a>
-      </article>
-      <article class="plan main">
-        <span class="tag">Тариф 2 <b>чаще выбирают</b></span>
-        <h3>Упаковка и воронка</h3>
-        <div class="price">90 000 ₽</div>
-        <span class="meta">Срок — 4 недели</span>
-        <ul>
-          <li>Всё из тарифа «Стратегия»</li>
-          <li>Тексты для сайта и профиля в соцсетях</li>
-          <li>Контент-план на 30 дней</li>
-          <li>Сценарий воронки продаж и прогрева</li>
-          <li>Сценарий консультации или вебинара</li>
-        </ul>
-        <a class="btn" data-seller-href="tg" href="#" target="_blank" rel="noopener">Заказать</a>
-      </article>
-      <article class="plan">
-        <span class="tag">Тариф 3</span>
-        <h3>Сопровождение запуска</h3>
-        <div class="price"><small>от</small>150 000 ₽</div>
-        <span class="meta">Срок — 8 недель</span>
-        <ul>
-          <li>Всё из тарифа «Упаковка и воронка»</li>
-          <li>Еженедельные созвоны по проекту</li>
-          <li>Координация подрядчиков: дизайнер, монтажёр, таргетолог</li>
-          <li>Еженедельный отчёт о выполненных работах</li>
-          <li>Корректировка материалов по ходу запуска</li>
-        </ul>
-        <a class="btn ghost" data-seller-href="tg" href="#" target="_blank" rel="noopener">Заказать</a>
-      </article>
-    </div>
-    <p class="small">Услуги подрядчиков (дизайн, съёмка, реклама) в стоимость не входят и оплачиваются им напрямую, если вы решите их привлекать.</p>
+    <article class="plan main">
+      <span class="tag">Продюсирование эксперта</span>
+      <div class="price"><small>от</small>40 000 ₽</div>
+      <span class="meta">Срок — от 2 недель</span>
+      <ul>
+        <li>Созвон-интервью о вашем опыте и клиентах</li>
+        <li>Анализ ниши и конкурентов</li>
+        <li>Документ с позиционированием</li>
+        <li>Линейка продуктов с ценами</li>
+        <li>Тексты для сайта и профиля в соцсетях</li>
+        <li>Контент-план на 30 дней</li>
+        <li>Сценарий воронки продаж</li>
+      </ul>
+      <a class="btn" data-seller-href="tg" href="#" target="_blank" rel="noopener">Обсудить в Telegram</a>
+    </article>
   </div>
 </section>
 
@@ -301,7 +271,7 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
   <div class="wrap">
     <div class="sh">
       <span class="eyebrow">Как проходит работа</span>
-      <h2>Этапы на примере тарифа «Упаковка и воронка»</h2>
+      <h2>Этапы работы</h2>
     </div>
     <ol class="weeks">
       <li><span class="wk">Неделя 1</span><b>Интервью и анализ</b><span>Созвон, анкета, разбор ниши и конкурентов.</span></li>
@@ -317,12 +287,11 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
     <div class="sh">
       <span class="eyebrow">Оплата</span>
       <h2>Как оплатить</h2>
-      <p>Сначала согласуем тариф и сроки в Telegram, затем вы оплачиваете удобным способом. Чек придёт в электронном виде.</p>
+      <p>Сначала согласуем состав работ, сумму и сроки в Telegram, затем вы оплачиваете удобным способом. Чек придёт в электронном виде.</p>
     </div>
     <div class="pay">
       <div><b>Картой или через СБП</b><p>Пришлём ссылку на оплату. Подходят карты «Мир», Visa и Mastercard российских банков.</p></div>
       <div><b>По реквизитам</b><p>Выставим счёт для перевода с карты или со счёта ИП и компании. Реквизиты — в конце страницы и в <a href="oferta.html">оферте</a>.</p></div>
-      <div><b>По этапам</b><p>Тариф «Сопровождение запуска» можно оплатить двумя частями: 50% перед началом и 50% после передачи материалов «Упаковки».</p></div>
     </div>
   </div>
 </section>
@@ -331,10 +300,10 @@ footer .wrap { padding-block: 22px; font-size: 13px; color: var(--muted); displa
   <div class="wrap">
     <div class="sh"><span class="eyebrow">Вопросы</span><h2>Частые вопросы</h2></div>
     <div class="faq">
-      <details><summary>Что именно я получу?</summary><p>Файлы, перечисленные в выбранном тарифе: документы со стратегией, таблицу продуктов и цен, тексты, контент-план, сценарии. Всё передаём в электронном виде, материалы остаются у вас.</p></details>
-      <details><summary>Сколько длится работа?</summary><p>От 2 до 8 недель в зависимости от тарифа. Дату начала и сроки этапов фиксируем до оплаты. Начинаем не позже 10 рабочих дней после оплаты.</p></details>
+      <details><summary>Что именно я получу?</summary><p>Файлы, перечисленные в разделе «Что входит»: документы со стратегией, таблицу продуктов и цен, тексты, контент-план, сценарии. Всё передаём в электронном виде, материалы остаются у вас.</p></details>
+      <details><summary>Сколько длится работа?</summary><p>Обычно от 2 до 4 недель в зависимости от объёма работ. Дату начала и сроки этапов фиксируем до оплаты. Начинаем не позже 10 рабочих дней после оплаты.</p></details>
       <details><summary>Вы гарантируете продажи?</summary><p>Нет. Мы отвечаем за то, что работы будут выполнены в оговорённом объёме и в срок. Количество продаж зависит от вашей ниши, рекламного бюджета и того, как вы используете материалы.</p></details>
-      <details><summary>Как оплатить?</summary><p>Картой или через СБП по ссылке на оплату, либо переводом по реквизитам. Сопровождение запуска можно оплатить двумя частями.</p></details>
+      <details><summary>Как оплатить?</summary><p>Картой или через СБП по ссылке на оплату, либо переводом по реквизитам.</p></details>
       <details><summary>Можно вернуть деньги?</summary><p>Да. Отказаться можно в любой момент: вернём стоимость этапов, которые ещё не выполнены. Порядок описан в <a href="oferta.html">оферте</a>.</p></details>
       <details><summary>Работаете с ИП и компаниями?</summary><p>Да. Выставим счёт на организацию, после оплаты пришлём чек.</p></details>
     </div>
